@@ -1,4 +1,5 @@
 #include <iostream>
+#include "triangle.h"
 
 using namespace std;
 
@@ -9,27 +10,36 @@ int main() {
         cout << "| ----------------------- |" << endl;
         cout << "|      TEAM PROJECT       |" << endl;
         cout << "| ----------------------- |" << endl;
-        cout << "1. Прямоугольный треугольник" << endl;
-        cout << "2. Счёт в кафе" << endl;
-        cout << "0. Выход" << endl;
-        cout << "Выберите пункт: ";
+        cout << "1. Right triangle" << endl;
+        cout << "2. Cafe bill" << endl;
+        cout << "0. Exit" << endl;
+        cout << "Choose option: ";
         cin >> choice;
 
         switch (choice) {
-            case 1:
-                cout << "Модуль прямоугольного треугольника пока не подключён." << endl;
+            case 1: {
+                double a, b;
+
+                cout << "Enter first leg: ";
+                cin >> a;
+                cout << "Enter second leg: ";
+                cin >> b;
+
+                cout << "Hypotenuse: " << hypotenuse(a, b) << endl;
+                cout << "Area: " << rightTriangleArea(a, b) << endl;
                 break;
+            }
 
             case 2:
-                cout << "Модуль счёта в кафе пока не подключён." << endl;
+                cout << "Cafe bill module is not connected yet." << endl;
                 break;
 
             case 0:
-                cout << "Выход." << endl;
+                cout << "Exit." << endl;
                 break;
 
             default:
-                cout << "Неверный пункт меню." << endl;
+                cout << "Invalid option." << endl;
         }
 
     } while (choice != 0);
