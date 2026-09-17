@@ -180,7 +180,7 @@ int main() {
     do {
         cout << "\n=== Variant 87: Cafe Bill ===\n";
         cout << "Current currency: " << currency << "\n";
-        cout << "1. Calculate bill with tip\n";
+        cout << "1. Calculate cafe bill with tip\n";
         cout << "2. Split bill between people\n";
         cout << "3. Apply discount\n";
         cout << "4. Show operation history\n";
