@@ -4,30 +4,19 @@
 #include <vector>
 #include <string>
 
+#include "cafe.h"
+#include "triangle.h"
+
 using namespace std;
 
 // Вариант №87. Выполнил Кузнецов В.А.
+
 struct Operation {
     string type;
     double value;
     double parameter;
     double result;
 };
-
-// Calculate total bill with tip
-double withTip(double bill, double t) {
-    return bill * (1 + t / 100);
-}
-
-// Calculate bill per person
-double splitBill(double total, int k) {
-    return total / k;
-}
-
-// Calculate bill with discount
-double withDiscount(double bill, double discount) {
-    return bill * (1 - discount / 100);
-}
 
 // Clear incorrect input
 void clearInput() {
@@ -90,11 +79,11 @@ int getChoice() {
     while (true) {
         cin >> value;
 
-        if (!cin.fail() && value >= 0 && value <= 5) {
+        if (!cin.fail() && value >= 0 && value <= 6) {
             return value;
         }
 
-        cout << "Error: choose an option from 0 to 5: ";
+        cout << "Error: choose an option from 0 to 6: ";
         clearInput();
     }
 }
@@ -172,7 +161,6 @@ int main() {
 
     vector<Operation> history;
 
-    // Default currency
     string currency = "RUB";
 
     cout << fixed << setprecision(2);
@@ -185,6 +173,7 @@ int main() {
         cout << "3. Apply discount\n";
         cout << "4. Show operation history\n";
         cout << "5. Change currency\n";
+        cout << "6. Right triangle calculations\n";
         cout << "0. Exit\n";
         cout << "Choose an option: ";
 
@@ -262,6 +251,27 @@ int main() {
             currency = chooseCurrency();
             cout << "Currency changed to " << currency << ".\n";
             break;
+
+        case 6: {
+            double a, b;
+
+            cout << "Enter first leg: ";
+            cin >> a;
+
+            cout << "Enter second leg: ";
+            cin >> b;
+
+            if (cin.fail() || a <= 0 || b <= 0) {
+                cout << "Error: legs must be positive numbers.\n";
+                clearInput();
+                break;
+            }
+
+            cout << "Hypotenuse = " << hypotenuse(a, b) << "\n";
+            cout << "Area = " << rightTriangleArea(a, b) << "\n";
+
+            break;
+        }
 
         case 0:
             cout << "Program finished.\n";
