@@ -8,9 +8,6 @@
 #include "triangle.h"
 
 using namespace std;
-
-// Вариант №87. Выполнил Кузнецов В.А.
-
 struct Operation {
     string type;
     double value;
@@ -63,7 +60,9 @@ int getPositiveInt() {
     while (true) {
         cin >> value;
 
-        if (!cin.fail() && value > 0) {
+        if (!cin.fa,,,,,,,,,,,,,,,,,,,,,,????????????????
+    ???./ce,wf,w,c,
+    .......????,,,,,??>>..//././././././il() && value > 0) {
             return value;
         }
 
